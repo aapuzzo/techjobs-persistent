@@ -12,6 +12,7 @@ import java.util.List;
 public class Skill extends AbstractEntity {
 
     @NotBlank(message = "Description cannot be empty")
+    @NotNull
     @Size(min = 3, max = 100, message = "Description must be between 3-100 characters")
     private String description;
 
