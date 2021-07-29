@@ -1,6 +1,8 @@
 package org.launchcode.javawebdevtechjobspersistent.controllers;
 
+import org.launchcode.javawebdevtechjobspersistent.dataRepos.EmployerRepository;
 import org.launchcode.javawebdevtechjobspersistent.dataRepos.JobRepository;
+import org.launchcode.javawebdevtechjobspersistent.dataRepos.SkillRepository;
 import org.launchcode.javawebdevtechjobspersistent.models.Job;
 import org.launchcode.javawebdevtechjobspersistent.models.JobData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,11 @@ import static org.launchcode.javawebdevtechjobspersistent.controllers.ListContro
 public class SearchController {
 
     @Autowired
+    private EmployerRepository employerRepository;
+    @Autowired
     private JobRepository jobRepository;
+    @Autowired
+    private SkillRepository skillRepository;
 
     @RequestMapping("")
     public String search(Model model) {
